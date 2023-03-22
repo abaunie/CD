@@ -1,0 +1,33 @@
+package com.mycompany.depu;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author abaunie
+ */
+public class Depu { 
+       private static int factorial(int n) {
+        int i, producto = 1;
+        for (i = n; i > 1; i--) {
+           producto *= i;
+        }
+        return producto;
+       }
+	public static void main( String [] args ) { 
+		int n, r, c;
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Dar numero total de componentes> ");
+                n = sc.nextInt();
+                System.out.println("Dar numero de componentes seleccionados> ");
+                r = sc.nextInt();
+                if (r <= n) {
+                    c = factorial(n) / (factorial(r) * factorial(n-r));
+                    System.out.println("El numero de combinaciones es "+ c);
+                }
+                else {
+                 System.out.println("Los componentes seleccionados no pueden exceder el numero total\n");
+                }
+        }
+
+}
